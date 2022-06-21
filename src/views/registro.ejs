@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+<title>Document</title>
+</head>
+<body style="background: rgb(165, 146, 165);">
+  <div class="container" style="width: 720px; margin-top: 20px; background: rgb(165, 146, 165);" >
+    <form action="/add" method="post" >
+
+      <div class="form-group">
+        <label for="formGroupExampleInput">Nombre</label>
+        <input type="text" class="form-control" id="Nombre" name="Nombre" placeholder="Ingrese su Nombre" required>
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Apellidos</label>
+        <input type="text" class="form-control" name="Apellido" placeholder="Ingrese su Apellidos" required>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Tipo de Identificacion</label>
+        <select class="form-control" name="Tipo_documento">
+          <option>Seleccione un Tipo</option>
+          <option>Cedula de Ciudadania</option>
+          <option>Tarjeta de Identidad</option>
+          <option>cedula de extranjeria</option>
+          <option>pasaporte</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="formGroupExampleInput">Numero de Identificacion</label>
+        <input type="number" class="form-control" name="Numero_documento" placeholder="Ingrese su Numero de Identificacion" required>
+
+      </div>
+
+      <div class="form-group">
+        <label for="formGroupExampleInput">Numero fijo o movil</label>
+        <input type="text" class="form-control" name="Telefono" placeholder="Ingrese su numero fijo o movil" required>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Correo Electronico</label>
+        <input type="email" class="form-control" name="Correo" aria-describedby="emailHelp" placeholder="Ingrese su Correo Electronico" required>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Correo Electronico</label>
+        <input type="email" class="form-control" id="Correo1" aria-describedby="emailHelp" placeholder="Confirme su Correo Electronico" required>
+      </div>
+      <button onclick="campos()" type="submit" class="btn btn-primary "style="width: 100%; margin:10px 0 10px 0 ;">Registrar</button>
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" required>
+        <label class="form-check-label" for="defaultCheck1">
+          Acepto los <a href="#"> terminos y condiciones</a>
+        </label>
+
+
+    </form>
+  </div>
+  <script src="../controller/controlador.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.18/dist/sweetalert2.all.min.js"></script>
+<script>
+
+function campos(){
+  Swal.fire({
+  text: "You won't be able to revert this!",
+  icon: 'warning',
+  confirmButtonColor: '#3085d6',
+}).then((result) => {
+  if (result.isConfirmed) {
+    Swal.fire(
+      'Gracias!',
+    )
+  }
+})
+
+}
+
+</script>
+
+  
+</body>
+</html>
