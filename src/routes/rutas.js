@@ -3,6 +3,8 @@ const rutas = express.Router();
 const tokens= require('jsonwebtoken');
 const controller = require('../controller/controlador');
 
+
+//valido el toquen generado por el ususario en loguin
 function validate(req, res, next) {
     const accesstoken = req.header["accesstoken"] || req.query.accesstoken;
     if (!accesstoken) res.send('no hay accesstoken');
@@ -12,7 +14,9 @@ function validate(req, res, next) {
       next();
     });
   };
-  
+
+//----------------------------------------------------------------
+
 //render de la vista registro  
 rutas.get('/',controller.registro);
 //----------------------------------------------------------------
@@ -26,7 +30,7 @@ rutas.get('/loguin',controller.loguin);
 //----------------------------------------------------------------
 
 
-//render de la vista registrado
+//protejo la vista registrado para utilizar el token
 rutas.get('/registrado',validate,controller.registrado);
 //----------------------------------------------------------------
 
