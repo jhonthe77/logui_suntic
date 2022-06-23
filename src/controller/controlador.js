@@ -60,14 +60,14 @@ controller.save = (req, res) => {
 
 //constante para exportacion de la function
 controller.cosulatar = (req, res) => {
+  const password = req.body;
 //genero un token para el autenticar el ususario
     function token(user) {
         return tokens.sign(user, process.env.SECRETO, { expiresIn:"10m" });
       };
 //--------------------------------------------------------------
 
-//verifico que el ususario exista en la base de datos
-  const { password } = req.body;
+ 
   req.getConnection((err, conn) => {
     conn.query(
       "SELECT email,password FROM userloguin WHERE password=?",[password],(err, fila) =>{

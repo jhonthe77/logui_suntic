@@ -1,11 +1,13 @@
-// exporto mis dependency 
+
 const express = require('express');
 const paht = require('path');
 const morgan = require('morgan');
 const mysql = require('mysql');
 const myconne = require('express-myconnection');
 const bodyParser = require('body-parser');
+
 require('dotenv').config()
+
 // ----------------------------------------------------------------
 
 const app = express();
@@ -34,8 +36,11 @@ app.use('/', rutas);
 //---------------------------------------------------------------
 
 //configuro mi servidor para que pueda leer los diferen datos que le enviare 
-app.use(bodyParser.urlencoded({ extended: false }))
+
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
 //------------------------------------------------------------
 
 
