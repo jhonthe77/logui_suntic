@@ -56,8 +56,6 @@ controller.save = (req, res) => {
   }
 };
 //-------------------------------------------------------------
-
-
 //constante para exportacion de la function
 controller.cosulatar = (req, res) => {
   const password = req.body;

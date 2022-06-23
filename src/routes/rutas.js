@@ -34,7 +34,9 @@ rutas.get('/loguin',controller.loguin);
 rutas.get('/registrado',validate,controller.registrado);
 //----------------------------------------------------------------
 
+//llamado la vista registrado
 rutas.post('/registrado',controller.cosulatar)
+//----------------------------------------------------------------
 
 //exporto mis rutas
 module.exports=rutas;
